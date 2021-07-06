@@ -1,0 +1,16 @@
+<div class="search-container">
+    <div class="search-bar">
+        <mat-form-field class="search-bar-width" appearance="fill">
+            <input #search matInput placeholder="Ex. Avatar">
+        </mat-form-field>
+        <button mat-flat-button color="accent" (click)="searchMovie(search.value)">SEARCH</button>
+    </div>
+
+
+    <div *ngIf="searchedMovies && searchedMovies.length>0;else noDataTemplate">
+        <app-movie-card *ngFor="let movie of searchedMovies; let i = index" [moviesData]="movie"></app-movie-card>
+    </div>
+    <ng-template #noDataTemplate>
+        <p>No movies found for you search. <br>Please modify your search.</p>
+    </ng-template>
+</div>
