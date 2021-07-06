@@ -1,21 +1,35 @@
-.search-container{
+.search-movie-container{
 
-  text-align: center;
-  text-align: -webkit-center;
-
-  .search-bar {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+  .search-container {
     display: flex;
     flex-direction: column;
-  }
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #ffffff8c;
+    text-align-last: center;
+    align-items: center;
+    padding: 10px 0;
   
-  .search-bar-width {
-    width: 100%;
+    .search-container-width,button {
+      width: 50%;
+    }
   }
 
-  .movie-container{
-    width: 300px;
+  .movies-container{
+    padding: 40px 3% 30px;
+    app-movie-card{
+      text-align: center;
+    }
+  }
+
+  .empty-search{
+    text-align:center;
+    margin-top: 10%;
+    h1 {
+      font-family: monospace;
+      font-weight: bold;
+      color: #6a582c;
+    }
   }
 }

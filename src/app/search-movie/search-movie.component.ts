@@ -8,20 +8,19 @@ import { Movie, SearchMovieService } from './search-movie.service';
 })
 export class SearchMovieComponent implements OnInit {
 
+  searchedMovies: any;
+  haveMovie: any;
 
-  searchedMovies:Movie[]=[];
-
-  constructor(private movieService:SearchMovieService) { }
+  constructor(private movieService: SearchMovieService) { }
 
   ngOnInit(): void {
-    this.searchMovie("avatar");
   }
 
-  searchMovie(value:string){
-    
-    this.movieService.searchMovie(value).subscribe((data:any)=>{
-      this.searchedMovies=data.Search
-    },(error)=>{
+  searchMovie(value: string) {
+    this.movieService.searchMovie(value).subscribe((data: any) => {
+      this.searchedMovies = data.Search;
+      this.haveMovie = data.Response
+    }, (error) => {
       console.log(error)
     })
   }

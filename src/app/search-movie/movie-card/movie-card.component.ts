@@ -8,14 +8,14 @@ import { Movie } from '../search-movie.service';
 })
 export class MovieCardComponent implements OnInit {
 
-  movie:Movie = {
-    Title:"",
-    Year:"",
-    imdbID:"",
-    Type:"",
-    Poster:"",
+  movie: Movie = {
+    Title: "",
+    Year: "",
+    imdbID: "",
+    Type: "",
+    Poster: "",
   }
-  @Input() moviesData:Movie=this.movie;
+  @Input() moviesData: Movie = this.movie;
 
   constructor() { }
 
